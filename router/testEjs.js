@@ -9,7 +9,7 @@ module.exports = function(app)
 
    router.get('/testEjs',function(req,res){
        var sendmsg = {ejs:"ejs Test"};
-        res.render('test.ejs',sendmsg);
+        res.render('testEjs',sendmsg);
      });
 
    return router;
