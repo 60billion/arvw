@@ -33,6 +33,9 @@ app.use(cors());
 var main = require('./router/main')(app);
 app.use('/main',main);
 
+var testEjs = require('./router/testEjs')(app);
+app.use('/testEjs',testEjs);
+
 //이방식은 사용해본 경험이 적어서 사용하지 않을 예정
 var router = require('./router/sub')(app);
 
