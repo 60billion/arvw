@@ -24,16 +24,16 @@ module.exports = function(app)
 
    router.get('/dbtest',function(req,res){
     
-    var sql = `select * from connectTest where id=${1}`;
+    var sql = "select * from connectTest where id=1";
     conn.query(sql,function(err,rows,feilds){
         if(err) return console.log("failed to connect to db");
         console.log("db is working");
         console.log("rows:"+rows)
         console.log("rows[0]"+rows[0]);
         var data = rows[0];        
-        res.render('dbtest.ejs',data);
+        console.log("data:"+data)
     });
-     });
+    });
 
    return router;
 }
