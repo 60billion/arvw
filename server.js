@@ -33,9 +33,14 @@ conn.connect(function(){
 var main = require('./router/main')(app);
 app.use('/main',main);
 
-//ejs 사용방법은 아래 라우터 형식을 따라 가면 이해 할 수 있다.(view/router에 있는 testEjs파일을 확인하세요.)
+//ejs 사용방법은 아래 라우터 형식을 따라 가면 이해 할 수 있다.(각 각 view/router에 있는 testEjs파일을 확인하세요.)
 var testEjs = require('./router/testEjs')(app);
 app.use('/testEjs',testEjs);
+
+//데이터베이스 테스트 라우터
+var dbtest = require('/router/dbtest')(app);
+app.use('/dbtest',dbtest);
+
 
 //이방식은 사용해본 경험이 적어서 사용하지 않을 예정
 var router = require('./router/sub')(app);
