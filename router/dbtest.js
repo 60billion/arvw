@@ -20,7 +20,10 @@ module.exports = function(app)
     user:"root",
     password:"11131113",
     database:"arvw"
-    })
+    });
+    conn.connect(function(){
+        console.log("connected database in dbtest router");
+    });
 
    router.get('/dbtest',function(req,res){
     
