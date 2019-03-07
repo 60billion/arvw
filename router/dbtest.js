@@ -26,13 +26,12 @@ module.exports = function(app)
     });
 
    router.get('/dbtest',function(req,res){
-    var sql = 'select * from connectTest';
+    var sql = 'SELECT * FROM connectTest';
     conn.query(sql,function(err,rows,fields){
         if(err){
             console.log(err);
           }else{
             console.log(rows);
-            res.json(rows);
           }
     });
     var sendmsg = {ejs:"ejs Test"};
