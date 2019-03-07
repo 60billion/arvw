@@ -26,8 +26,8 @@ module.exports = function(app)
     });
 
    router.get('/dbtest',function(req,res){
-    
-    var sql = "select * from connectTest where id=1";
+    var a = 1;
+    var sql = `select * from connectTest`;
     conn.query(sql,function(err,rows,feilds){
         if(err) return console.log("failed to connect to db:"+err);
         console.log("db is working");
