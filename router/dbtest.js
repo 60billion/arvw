@@ -4,17 +4,6 @@ module.exports = function(app)
    var express = require('express');
    var router = express.Router();
 
-   //기타
-   
-   var bodyparser = require('body-parser');
-   var logger = require('morgan');
-   var methodOverride = require('method-override');
-   var cors = require('cors');
-   app.use(logger('dev'));
-   app.use(bodyparser.json());
-   app.use(methodOverride());
-   app.use(cors());
-
    //css 및 정적 파일을 사용하기위해서
    router.use(express.static('public'));
 
@@ -26,7 +15,7 @@ module.exports = function(app)
     password:"11131113",
     database:"arvw"
     });
-    
+
     conn.connect(function(){
         console.log("connected database in dbtest router");
     });

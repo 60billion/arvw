@@ -18,16 +18,16 @@ app.use(methodOverride());
 app.use(cors());
 
 //데이터베이스 접속
-// var mysql = require('mysql');
-// var conn = mysql.createConnection({
-// 	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
-//     user:"root",
-//     password:"11131113",
-//     database:"arvw"
-// })
-// conn.connect(function(){
-//     console.log("connected database!!")
-// });
+var mysql = require('mysql');
+var conn = mysql.createConnection({
+	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
+    user:"root",
+    password:"11131113",
+    database:"arvw"
+})
+conn.connect(function(){
+    console.log("connected database!!")
+});
 
 //이방식으로 라우터를 분리하고자 한다.
 var main = require('./router/main')(app);
@@ -38,7 +38,7 @@ var testEjs = require('./router/testEjs')(app);
 app.use('/testEjs',testEjs);
 
 //데이터베이스 테스트 라우터
-var dbtest = require('./router/dbtest')(app);
+var dbtest = require('/router/dbtest')(app);
 app.use('/dbtest',dbtest);
 
 
@@ -48,7 +48,6 @@ var router = require('./router/sub')(app);
 app.get('/',function(req,res){
 	res.send('health test');
 });
-
 
 app.listen(9000, function(){
     console.log("connected server!!")
