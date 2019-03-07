@@ -38,7 +38,7 @@ var testEjs = require('./router/testEjs')(app);
 app.use('/testEjs',testEjs);
 
 //데이터베이스 테스트 라우터
-var dbtest = require('/router/dbtest')(app);
+var dbtest = require('./router/dbtest')(app);
 app.use('/dbtest',dbtest);
 
 
