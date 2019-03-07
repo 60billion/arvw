@@ -26,8 +26,8 @@ module.exports = function(app)
     });
 
    router.get('/dbtest',function(req,res){
-    var sql = 'SELECT * FROM connectTest';
-    conn.query(sql,function(err,rows,fields){
+    
+    conn.query('SHOW DATABASES',function(err,rows,fields){
         if(err){
             console.log(err);
           }else{
