@@ -11,7 +11,7 @@ module.exports = function(app)
    //mysql접속
     var mysql = require('mysql');
     var conn = mysql.createConnection({
-	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
+	  host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
     user:"root",
     password:"11131113",
     database:"public"
@@ -23,7 +23,7 @@ module.exports = function(app)
 
    router.post('/dbtest',function(req,res){
 
-    conn.query('SHOW DATABASES',function(err,rows,fields){
+    conn.query('SELECT * FROM test;',function(err,rows,fields){
         if(err){
             console.log(err);
           }else{
