@@ -1,8 +1,13 @@
 var express = require('express');
+
 var bodyparser = require('body-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var cors = require('cors');
+app.use(logger('dev'));
+app.use(bodyparser.json());
+app.use(methodOverride());
+app.use(cors());
 
 //ejs,views,public 사용
 var app = express();
@@ -11,13 +16,10 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static('public'));
 
-//서버구동
-app.use(logger('dev'));
-app.use(bodyparser.json());
-app.use(methodOverride());
-app.use(cors());
+
 
 //데이터베이스 접속
+//데이터베이스접속방법 sudo mysql -h testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com -u root -p
 var mysql = require('mysql');
 var conn = mysql.createConnection({
 	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
@@ -42,7 +44,7 @@ app.use('/main',main);
 var testEjs = require('./router/testEjs')(app);
 app.use('/testEjs',testEjs);
 
-//데이터베이스 테스트 라우터
+//데이터베이스 테스트 라우터(get post 방식을 까먹어서 고생했었음.)
 var dbtest = require('./router/dbtest')(app);
 app.use('/dbtest',dbtest);
 
