@@ -7,7 +7,7 @@ module.exports = function(app)
    router.use(express.static('public'));
 
    router.get('/dbtest',function(req,res){
-    res.render('index.html');
+    res.render('dbtest');
    });
 
    return router;
