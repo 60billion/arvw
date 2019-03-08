@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 
 var bodyparser = require('body-parser');
 var logger = require('morgan');
@@ -10,7 +11,6 @@ app.use(methodOverride());
 app.use(cors());
 
 //ejs,views,public 사용
-var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
