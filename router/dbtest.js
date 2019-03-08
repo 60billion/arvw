@@ -26,5 +26,17 @@ module.exports = function(app)
     
    });
 
+   router.post('/dbtests',function(req,res){
+    conn.query("insert into test (id,name,password,contents) values('3','clone','1212','package');",function(err,rows,fields){
+     if(err){
+       console.log(err);
+     }else{
+       console.log(rows);
+       res.render('dbtest');
+     }
+    });
+   
+  });
+
    return router;
 };
