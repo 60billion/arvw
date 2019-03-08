@@ -5,8 +5,7 @@ module.exports = function(app)
    
    var AWS = require('aws-sdk');
    AWS.config.region = "ap-northeast-2c";
-   //css 및 정적 파일을 사용하기위해서
-   router.use(express.static('public'));
+
 
    //mysql접속
     var mysql = require('mysql');
@@ -22,6 +21,9 @@ module.exports = function(app)
     // });
 
    var router = express.Router();
+
+      //css 및 정적 파일을 사용하기위해서
+      router.use(express.static('public'));
 
    router.post('/dbtest',function(req,res){
 
