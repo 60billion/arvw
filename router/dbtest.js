@@ -14,7 +14,7 @@ module.exports = function(app)
 	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
     user:"root",
     password:"11131113",
-    database:"arvw"
+    database:"public"
     });
 
     conn.connect(function(){
@@ -22,7 +22,7 @@ module.exports = function(app)
     });
 
    router.post('/dbtest',function(req,res){
-      
+
     conn.query('SHOW DATABASES',function(err,rows,fields){
         if(err){
             console.log(err);
