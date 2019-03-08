@@ -18,12 +18,11 @@ module.exports = function(app)
     });
 
     conn.connect(function(){
-      if(err) return err;
         console.log("connected database in dbtest router");
     });
 
    router.post('/dbtest',function(req,res){
-    
+      
     conn.query('SHOW DATABASES',function(err,rows,fields){
         if(err){
             console.log(err);
