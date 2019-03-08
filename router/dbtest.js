@@ -18,6 +18,7 @@ module.exports = function(app)
     });
 
     conn.connect(function(){
+      if(err) return err;
         console.log("connected database in dbtest router");
     });
 
