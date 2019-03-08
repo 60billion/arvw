@@ -24,14 +24,16 @@ module.exports = function(app)
    router.post('/dbtest',function(req,res){
 
     conn.query('SELECT * FROM test;',function(err,rows,fields){
+      var sendmsg = {ejs:"ejs Test"};
         if(err){
             console.log(err);
+            res.render('dbtest',sendmsg);
           }else{
             console.log(rows);
+            res.render('dbtest',sendmsg);
           }
     });
-    var sendmsg = {ejs:"ejs Test"};
-    res.render('dbtest',sendmsg);
+  
 
     });
 
