@@ -20,7 +20,7 @@ module.exports = function(app)
         console.log("connected database in dbtest router");
     });
 
-   router.get('/dbtest',function(req,res){
+   router.post('/dbtest',function(req,res){
     
     conn.query('SHOW DATABASES',function(err,rows,fields){
         if(err){

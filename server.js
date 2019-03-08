@@ -41,7 +41,6 @@ app.use('/testEjs',testEjs);
 var dbtest = require('./router/dbtest')(app);
 app.use('/dbtest',dbtest);
 
-
 //이방식은 사용해본 경험이 적어서 사용하지 않을 예정
 var router = require('./router/sub')(app);
 
