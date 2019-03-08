@@ -25,20 +25,8 @@ module.exports = function(app)
    router.use(express.static('public'));
 
    router.post('/dbtest',function(req,res){
-
-    conn.query('select * from user;',function(err,rows,fields){
-
-        if(err){
-            console.log(err);
-
-          }else{
-            console.log(rows);
-
-          }
-    });
-  
-
-    });
+    res.render('dbtest.ejs');
+   });
 
    return router;
 };
