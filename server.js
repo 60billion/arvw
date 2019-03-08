@@ -23,11 +23,16 @@ var conn = mysql.createConnection({
 	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
     user:"root",
     password:"11131113",
-    database:"public"
+    database:"mockup"
 })
 conn.connect(function(){
     console.log("connected database!!")
 });
+
+//아마존 접속
+var AWS = require('aws-sdk');
+AWS.config.region = 'ap-northeast-2';
+var s3 = new AWS.S3();
 
 //이방식으로 라우터를 분리하고자 한다.
 var main = require('./router/main')(app);

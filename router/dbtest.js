@@ -13,7 +13,7 @@ module.exports = function(app)
 	  host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
     user:"root",
     password:"11131113",
-    database:"public"
+    database:"mockup"
     });
 
     // conn.connect(function(){
@@ -27,7 +27,7 @@ module.exports = function(app)
 
    router.post('/dbtest',function(req,res){
 
-    conn.query('SELECT * FROM test;',function(err,rows,fields){
+    conn.query('select * from user;',function(err,rows,fields){
       var sendmsg = {ejs:"ejs Test"};
         if(err){
             console.log(err);
