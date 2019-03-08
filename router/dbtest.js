@@ -7,7 +7,15 @@ module.exports = function(app)
    router.use(express.static('public'));
 
    router.get('/dbtest',function(req,res){
-    res.render('dbtest');
+     conn.query("select * from user;",function(err,rows,fields){
+      if(err){
+        console.log(err);
+      }else{
+        console.log(rows);
+        res.render('dbtest');
+      }
+     });
+    
    });
 
    return router;
