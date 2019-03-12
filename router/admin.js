@@ -16,7 +16,7 @@ module.exports = function(app)
    router.use(express.static('public'));
 
   router.get('/upload',function(req,res){
-    res.resnder('admin');
+    res.render('admin');
   });
 
    return router;
