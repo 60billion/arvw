@@ -25,7 +25,7 @@ var conn = mysql.createConnection({
 	host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
     user:"root",
     password:"11131113",
-    database:"mockup"
+    database:"arvw"
 })
 conn.connect(function(){
     console.log("connected database!!")

@@ -10,7 +10,7 @@ module.exports = function(app)
     host:"testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com",
       user:"root",
       password:"11131113",
-      database:"mockup"
+      database:"arvw"
   });
 
    //css 및 정적 파일을 사용하기위해서
@@ -20,7 +20,7 @@ module.exports = function(app)
 
    //DB테스트 get방식 (post get 방식 이해 부족으로 시간이 걸림...)
    router.get('/dbtest',function(req,res){
-     conn.query("select * from user;",function(err,rows,fields){
+     conn.query("select * from category;",function(err,rows,fields){
       if(err){
         console.log(err);
       }else{
