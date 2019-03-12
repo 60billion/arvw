@@ -21,7 +21,6 @@ module.exports = function(app)
     res.render('reg');
   });
   router.post('/reg',function(req,res){
-    
     var data = {userName:req.body.userName, category:req.body.category, subCategory:req.body.subCategory};
     console.log(JSON.stringify(data));
     res.render('admin',data);
