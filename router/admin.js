@@ -28,7 +28,7 @@ module.exports = function(app)
     console.log(category);
     console.log(subCategory);
     var data = {userName:userName, category:category, subCategory:subCategory};
-    res.render('admin',data);
+    res.render('index',data);
   });
 
    return router;
