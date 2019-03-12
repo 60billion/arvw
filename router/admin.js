@@ -24,7 +24,7 @@ module.exports = function(app)
     
     var data = {userName:req.body.userName, category:req.body.category, subCategory:req.body.subCategory};
     console.log(JSON.stringify(data));
-    res.render('index',data);
+    res.render('admin',data);
   });
 
    return router;
