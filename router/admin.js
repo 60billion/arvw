@@ -15,8 +15,15 @@ module.exports = function(app)
    //css 및 정적 파일을 사용하기위해서
    router.use(express.static('public'));
 
-  router.get('/upload',function(req,res){
-    res.render('admin');
+  router.get('/reg',function(req,res){
+    res.render('reg');
+  });
+  router.post('/reg',function(req,res){
+    var userName = req.body.userName;
+    var category = req.body.category;
+    var subCategory = req.body.subCategory;
+    var data = {userName:userName, category:category, subCategory:subCategory};
+    res.render('admin',data);
   });
 
    return router;
