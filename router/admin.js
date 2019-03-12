@@ -22,6 +22,9 @@ module.exports = function(app)
     var userName = req.body.userName;
     var category = req.body.category;
     var subCategory = req.body.subCategory;
+    console.log(userName);
+    console.log(category);
+    console.log(subCategory);
     var data = {userName:userName, category:category, subCategory:subCategory};
     res.render('admin',data);
   });
