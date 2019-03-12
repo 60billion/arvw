@@ -25,7 +25,7 @@ module.exports = function(app)
         console.log(err);
       }else{
         console.log(rows);
-        res.render('dbtest');
+        res.render('dbtest',rows[0]);
       }
      });
     
