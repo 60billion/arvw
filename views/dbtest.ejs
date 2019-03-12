@@ -6,9 +6,9 @@
   <body>
     <h1>Hello</h1>
 
-    <%for(var i=0; i<rows.length; i++){ %>
-      <li><%=rows[i].user%></li>
-    <%}%>
+    <% post.forEach(function(rows){ %>
+      <li><%= rows[i].user %> - <%= rows[i].category %> </li>
+    <% }) %>
 
     <form action="/dbtest/dbtests" method="post">
       First name:<br>
