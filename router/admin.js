@@ -2,6 +2,8 @@ module.exports = function(app)
 {     
   var express = require('express');
   var router = express.Router();
+  var bodyparser = require('body-parser');
+  app.use(bodyparser.json());
   
   //데이터베이스접속방법 sudo mysql -h testdatabase.c3asktw2nxxm.ap-northeast-2.rds.amazonaws.com -u root -p
   var mysql = require('mysql');
