@@ -25,7 +25,8 @@ module.exports = function(app)
         console.log(err);
       }else{
         console.log(rows);
-        res.render('dbtest',{rows:rows,length:Object.keys(rows).length});
+        res.render('dbtest',{rows:rows});
+        // res.render('dbtest',{rows:rows,length:Object.keys(rows).length});
       }
      });
     
