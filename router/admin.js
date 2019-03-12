@@ -21,13 +21,9 @@ module.exports = function(app)
     res.render('reg');
   });
   router.post('/reg',function(req,res){
-    var userName = req.body.userName;
-    var category = req.body.category;
-    var subCategory = req.body.subCategory;
-    console.log(userName);
-    console.log(category);
-    console.log(subCategory);
-    var data = {userName:userName, category:category, subCategory:subCategory};
+    
+    var data = {userName:req.body.userName, category:req.body.category, subCategory:req.body.subCategory};
+    console.log(JSON.stringify(data));
     res.render('index',data);
   });
 
