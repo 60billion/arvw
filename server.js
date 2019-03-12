@@ -6,7 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var cors = require('cors');
 app.use(logger('dev'));
-app.use(bodyparser.urlencoded());
+app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 app.use(methodOverride());
 app.use(cors());
