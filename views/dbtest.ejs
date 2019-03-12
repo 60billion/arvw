@@ -6,9 +6,13 @@
   <body>
     <h1>Hello</h1>
 
+    <%for(var i=0; i<rows.length; i++){ %>
+      <li><%=rows[i].user%></li>
+    <%}%>
+
     <form action="/dbtest/dbtests" method="post">
       First name:<br>
-      <input type="text" name="firstname" value=<%= user %>>
+      <input type="text" name="firstname" value="mickey">
       <br>
       Last name:<br>
       <input type="text" name="lastname" value="Mouse">
