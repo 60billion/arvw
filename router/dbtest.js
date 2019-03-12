@@ -25,8 +25,8 @@ module.exports = function(app)
         console.log(err);
       }else{
         console.log(rows);
-        res.render('dbtest',{rows:rows});
-        // res.render('dbtest',{rows:rows,length:Object.keys(rows).length});
+        res.render('dbtest',{rows:rows});//그냥 rows를 보내는게아니라 rows의 인덱스? 이름을 정해서 넘겨주어야 작동이된다.
+        // res.render('dbtest',{rows:rows,length:Object.keys(rows).length}); for loop을 돌릴때 처음부터 length값을 잡아서 넣어줄수있다.
       }
      });
     
