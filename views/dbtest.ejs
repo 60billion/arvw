@@ -4,15 +4,10 @@
 
   </head>
   <body>
-    <h1>Hello</h1>
-
-    <% rows.forEach(function(rows){ %>
-      <li><%= rows[i].user %> - <%= rows[i].category %> </li>
-    <% }) %>
-
+    <h1>Hello</h1> 
     <form action="/dbtest/dbtests" method="post">
       First name:<br>
-      <input type="text" name="firstname" value="mickey">
+      <input type="text" name="firstname" value=<%=rows[0].user%>>
       <br>
       Last name:<br>
       <input type="text" name="lastname" value="Mouse">
